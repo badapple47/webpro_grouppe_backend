@@ -1,13 +1,16 @@
 'use strict'
 module.exports = function(app){
-    var userList = require('../controllers/userListController')
+    var User = require('../controllers/userListController')
+
 
     app.route('/users')
-        .get(userList.listAllUsers)
-        .post(userList.createAUser)
+        .get(User.listAllUsers)
+        .post(User.createAUser)
 
     app.route('/users/:userId')
-        .get(userList.readAUser)
-        .delete(userList.deleteAUser)
-        .post(userList.updateAUser)
+        .get(User.readAUser)
+        .delete(User.deleteAUser)
+        .post(User.updateAUser)
+
+
 }

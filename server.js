@@ -4,7 +4,11 @@ const bodyParser    = require('body-parser')
 
 app = express()
 port = process.env.PORT || 8082
+
 User = require('./api/models/userListModel')
+
+
+Auth = require('./api/models/authModel')
 
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/Userdb3', (err) => {
@@ -18,7 +22,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 const routes = require('./api/routes/userListRoutes')
+const authRoutes = require('./api/routes/authRoutes')
+
 routes(app)
+authRoutes(app)
 
 app.listen(port)
 console.log('Server started on: ' + port);
