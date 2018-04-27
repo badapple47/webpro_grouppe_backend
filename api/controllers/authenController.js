@@ -18,16 +18,20 @@ exports.check = function(req, res){
 
 
 exports.check2 = function(req, res){
-    console.log(req.body.username)
+    // console.log(req.body.username)
     // var query = { sort: { Id: 'joeyinwza' } }
     let query = { username: req.body.username }
     console.log(query)
     User.findOne(query, (err ,user) => {
         if(err) throw err
         console.log(user)
+        if(user != null){
         if (req.body.password == user.password) {
             res.json("Okay!")
+        }else{
+            res.json("Cant Find")
         }
+    }
         
     })
 }
