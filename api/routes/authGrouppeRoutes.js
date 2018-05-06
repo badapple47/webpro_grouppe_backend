@@ -1,10 +1,10 @@
 'use strict'
 module.exports = function(app){
    
-    var Auth = require('../controllers/authenController')
+    var Auth = require('../controllers/authenGrouppeController')
 
 
-    app.route('/authen')
+    app.route('/authenGrouppe')
         .get(Auth.check)
         .post(Auth.check2)
 
