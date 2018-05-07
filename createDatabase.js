@@ -21,7 +21,9 @@ MongoClient.connect(url, function(err, db) {
                 Facebook : "https://www.facebook.com/onewdivide",
                 Phone : "0982617716",
                 Work : "Computer Engineering",
-                Skill : "Java, Android"
+                Skill : "Java, Android",
+                arr : []
+                
             }
             ]
   dbo.collection("users").insertMany(obj, function(err, res) {

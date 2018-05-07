@@ -16,16 +16,25 @@ exports.createAUser = function(req, res){
 }
 
 
-// exports.createAUser = function(req, res){
-// MongoClient.connect(url, function(err, db) {
-//   if (err) throw err
-// var dbo = db.db("grouppe")
-//     //Insert Many Items
-//    var obj = req.body
-//   dbo.collection("users").insertMany(obj, function(err, res) {
-//     if (err) throw err
-//     console.log("Inserted "+res.insertedCount+" items")
-//     db.close()
-//   })
-// })
-// }
+exports.update = function(req, res){
+  console.log(req.body)
+  console.log(req.params.userID)
+  var newUser = {}
+  newUser = req.body
+  // console.log(newUser)
+  authGrouppe.findByIdAndUpdate(req.params.userID, newUser, {new: true}, function(err, user){
+      if(err) throw err
+      // console.log(user)
+      res.json(user)
+  })
+}
+
+exports.showUser = function(req, res){
+  console.log(req.params.userID)
+  // console.log(newUser)
+  authGrouppe.findById(req.params.userID, function(err, user){
+      if(err) throw err
+      // console.log(user)
+      res.json(user)
+  })
+}

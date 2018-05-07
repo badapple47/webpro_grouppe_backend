@@ -6,4 +6,9 @@ module.exports = function(app){
     app.route('/regisGrouppe')
         .post(Regis.createAUser)
 
+
+    app.route('/updateGrouppe/:userID')
+        .get(Regis.showUser)
+        .post(Regis.update)
+
 }
