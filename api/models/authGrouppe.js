@@ -40,5 +40,5 @@ var UserSchema = new Schema({
 })
 
 // module.exports = mongoose.model('Auth', UserSchema)
-module.exports = mongoose.model('ProfileAndUsernamePassword', UserSchema)
+module.exports = mongoose.model('users', UserSchema)
 

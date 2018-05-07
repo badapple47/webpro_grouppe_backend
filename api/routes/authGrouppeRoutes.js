@@ -5,7 +5,9 @@ module.exports = function(app){
 
 
     app.route('/authenGrouppe')
-        .get(Auth.check)
         .post(Auth.check2)
+
+    app.route('/user')
+        .get(Auth.check)
 
 }
