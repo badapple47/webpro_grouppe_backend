@@ -26,7 +26,7 @@ exports.check2 = function(req, res){
         console.log(req.body.password)
         // console.log(user.password)
         if(User != null){
-        if (req.body.password == user.password) {
+        if (req.body.password == User.password) {
             res.json("success")
             console.log(req.body.password)
             console.log(user.password)
