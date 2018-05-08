@@ -3,37 +3,37 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var UserSchema = new Schema({
-    Username: {
+    username: {
         type: String
     },
-    Password: {
+    password: {
         type: String
     },
-    ImageURL: {
+    imageURL: {
         type: String
     },
-    NameTH: {
+    nameTH: {
         type: String
     },
-    NameEng: {
+    nameEng: {
         type: String
     },
-    StudentID: {
+    studentID: {
         type: String
     },
-    Email: {
+    email: {
         type: String
     },
-    Facebook: {
+    facebook: {
         type: String
     },
-    Phone: {
+    phone: {
         type: String
     },
-    Work: {
+    work: {
         type: String
     },
-    Skill: {
+    skill: {
         type: String
     }
 

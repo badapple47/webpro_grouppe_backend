@@ -6,9 +6,9 @@ app = express()
 port = process.env.PORT || 8082
 
 const User = require('./api/models/userListModel')
-const auth = require('./api/models/authModel')
+// const auth = require('./api/models/authModel')
 const authGrouppe = require('./api/models/authGrouppe')
-const regisGrouppe = require('./api/models/authGrouppe')
+const eventGrouppe = require('./api/models/eventGrouppe')
 
 mongoose.Promise = global.Promise
 mongoose.connect('mongodb://localhost/grouppe', (err) => {
@@ -22,14 +22,14 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 const routes = require('./api/routes/userListRoutes')
-const authroutes = require('./api/routes/authRoutes')
+// const authroutes = require('./api/routes/authRoutes')
 const authGrouppeRoutes = require('./api/routes/authGrouppeRoutes')
-const regisGrouppeRoutes = require('./api/routes/regisGrouppeRoutes')
+const eventGrouppeRoutes = require('./api/routes/eventGrouppeRoutes')
 
 routes(app)
-authroutes(app)
+// authroutes(app)
 authGrouppeRoutes(app)
-regisGrouppeRoutes(app)
+eventGrouppeRoutes(app)
 
 app.listen(port)
 console.log('Server started on: ' + port);
