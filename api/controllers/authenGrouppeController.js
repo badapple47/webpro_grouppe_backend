@@ -16,20 +16,20 @@ exports.check = function(req, res){
 
 
 exports.check2 = function(req, res){
-    let query = { Username: req.body.Username }
+    let query = { username: req.body.username }
     // console.log(query)
     User.findOne(query, (err ,user) => {
         if(err) throw err
         // console.log(user)
         // console.log(req.body)
-        console.log(req.body.Username)
-        console.log(req.body.Password)
-        console.log(user.Password)
+        console.log(req.body.username)
+        console.log(req.body.password)
+        console.log(user.password)
         if(User != null){
-        if (req.body.Password == user.Password) {
+        if (req.body.password == user.password) {
             res.json("success")
-            console.log(req.body.Password)
-            console.log(user.Password)
+            console.log(req.body.password)
+            console.log(user.password)
         }else{
             res.json("fail")
         }
