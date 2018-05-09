@@ -35,6 +35,21 @@ var UserSchema = new Schema({
     },
     skill: {
         type: String
+    },
+    mobileNo: {
+        type: String
+    },
+    website: {
+        type: String
+    },
+    nationalID: {
+        type: String
+    },
+    department: {
+        type: String
+    },
+    eventId:{
+        type: Array
     }
 
 })

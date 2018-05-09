@@ -42,13 +42,15 @@ exports.updateMemberEvent = function(req,res){
         // console.log(user)
         // res.json(user)
 
-  })
-
-  Eve.findByIdAndUpdate(req.body.eventID, newAdd, {new: true}, function(err, user){
+        Eve.findByIdAndUpdate(req.body.eventID, newAdd, {new: true}, function(err, user){
     if(err) throw err
     console.log("this is newAdd : "+ newAdd)
     console.log("this is memberInEventArray : "+ memberInEventArray)
     res.json(user)
 })
+
+  })
+
+  
 
 }

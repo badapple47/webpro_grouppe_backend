@@ -10,11 +10,11 @@ exports.check = function(req, res){
     User.find({}, function(err, user){
         if(err) throw err
         console.log(user)
-        for(i = 0; i<= user.length; i++){
-            if(user.NameTH!="")
-                res.json(user[1])
-        }
-        
+        // for(i = 0; i<= user.length; i++){
+        //     if(user.NameTH!="")
+        //         res.json(user[1])
+        // }
+        res.json(user)
     })
 }
 
