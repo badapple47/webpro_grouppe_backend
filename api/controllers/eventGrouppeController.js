@@ -54,3 +54,24 @@ exports.updateEventInMember = function(req,res){
         })
   })
 }
+
+exports.checkEventInMember = function(req,res){
+    console.log(req.body.eventID)
+    console.log(req.body.userID)
+    var i
+    var check = 123456
+    User.findById(req.body.userID, function(err, user){
+        if(err) throw err
+        for(i=0; i<= user.eventId.length; i++){
+
+            if(user.eventId[i] == req.body.eventID)
+                check = i
+        
+        }
+        if(check!=123456)
+            res.json("this member already join this event .")
+        else
+            res.json("this member didn't join to this event .")
+        
+    })
+}
