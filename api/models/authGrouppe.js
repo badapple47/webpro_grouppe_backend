@@ -48,8 +48,9 @@ var UserSchema = new Schema({
     department: {
         type: String
     },
-
-
+    eventId:{
+        type: Array
+    }
 
 })
 
