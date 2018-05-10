@@ -6,13 +6,22 @@ var UserSchema = new Schema({
     event: {
         type: String
     },
-    day: {
+    dayStart: {
         type: String
     },
-    month: {
+    monthStart: {
         type: String
     },
-    year: {
+    yearStart: {
+        type: String
+    },
+    dayEnd: {
+        type: String
+    },
+    monthEnd: {
+        type: String
+    },
+    yearEnd: {
         type: String
     },
     image: {
@@ -23,6 +32,9 @@ var UserSchema = new Schema({
     },
     userId : {
         type: Array
+    },
+    view: {
+        type: Number
     }
 
 })

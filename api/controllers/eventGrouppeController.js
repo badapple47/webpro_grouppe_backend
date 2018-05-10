@@ -85,3 +85,29 @@ exports.showEvent = function(req, res){
         res.json(eve)
     })
   }
+
+exports.updateEventView = function(req,res){
+    var tempview,newAdd
+    console.log("updateEventView")
+    // Eve.findById(req.params.eventID, function(err, eve){
+    //     if(err) throw err
+    //     console("this is eve : "+ eve)
+    //     tempview = eve.view+1
+    //     newAdd = { "view" : tempview }
+
+        
+    // })
+    Eve.findById(req.params.eventID, function(err, eve){
+        if(err) throw err
+        console.log(eve.view)
+        tempview = eve.view+1
+        newAdd = {
+            "view" : tempview
+        }
+        Eve.findByIdAndUpdate(req.params.eventID, newAdd, {new: true}, function(err, eve){
+            if(err) throw err
+        res.json(eve)
+        })
+
+    })
+}
