@@ -16,3 +16,13 @@ exports.check = function(req, res){
         res.json(news)
     })
 }
+
+exports.showNews = function(req,res){
+    console.log(req.params.newsID)
+    // console.log(newUser)
+    News.findById(req.params.newsID, function(err, news){
+        if(err) throw err
+        // console.log(user)
+        res.json(news)
+    })
+}
