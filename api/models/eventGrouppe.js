@@ -21,9 +21,19 @@ var UserSchema = new Schema({
     description: {
         type: String
     },
+    shortDescription:{
+
+        type: String
+
+    },
+    location:{
+        type: String
+    },
     userId : {
         type: Array
-    }
+    },
+    
+
 
 })
 
