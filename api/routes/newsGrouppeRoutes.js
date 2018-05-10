@@ -6,4 +6,6 @@ module.exports = function(app){
     app.route('/news')
         .get(news.check)
 
+    app.route('/showNews/:newsID')
+        .get(news.showNews)
 }
