@@ -6,17 +6,21 @@ var UserSchema = new Schema({
     news: {
         type: String
     },
-    image: {
+    imageURL: {
         type: String
     },
     description: {
         type: String
     },
-    shortDescription : {
-        type: String
+    day: {
+        type: Number
+    },
+    month: {
+        type : Number
+    },
+    year: {
+        type: Number
     }
 
 })
-
-// module.exports = mongoose.model('Auth', UserSchema)
-module.exports = mongoose.model('events', UserSchema)
+module.exports = mongoose.model('news', UserSchema)
