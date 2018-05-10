@@ -49,8 +49,19 @@ var UserSchema = new Schema({
         type: String
     },
     eventId:{
-        type: Array
-    }
+        type: String
+    },
+    language:{
+        type: String
+    },
+    work:{
+        type: String
+    },
+    birthDate:{
+        type: String
+    },
+
+    
 
 })
 
