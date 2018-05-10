@@ -75,3 +75,13 @@ exports.checkEventInMember = function(req,res){
         
     })
 }
+
+exports.showEvent = function(req, res){
+    console.log(req.params.eventID)
+    // console.log(newUser)
+    Eve.findById(req.params.eventID, function(err, eve){
+        if(err) throw err
+        // console.log(user)
+        res.json(eve)
+    })
+  }

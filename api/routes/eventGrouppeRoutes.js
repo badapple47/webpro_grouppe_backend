@@ -7,6 +7,9 @@ module.exports = function(app){
     app.route('/event')
         .get(eve.check)
 
+    app.route('/showEvent/:eventID')
+        .get(eve.showEvent)
+
     app.route('/updateMemberInEvent')
         .post(eve.updateMemberEvent)
         
@@ -15,5 +18,6 @@ module.exports = function(app){
 
     app.route('/checkEventInMember')
         .post(eve.checkEventInMember)
+
 
 }

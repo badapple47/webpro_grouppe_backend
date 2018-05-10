@@ -50,6 +50,12 @@ var UserSchema = new Schema({
     },
     eventId:{
         type: Array
+    },
+    language: {
+        type: String
+    },
+    birthDate:{
+        type: String
     }
 
 })
