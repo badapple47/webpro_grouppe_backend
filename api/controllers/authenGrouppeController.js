@@ -45,6 +45,7 @@ exports.check2 = function(req, res){
     }else{
         res.json("not found")
     }
+
         
     })
 }
@@ -74,11 +75,20 @@ exports.update = function(req, res){
 }
 
 exports.showUser = function(req, res){
-  console.log(req.params.userID)
-  // console.log(newUser)
-  User.findById(req.params.userID, function(err, user){
-      if(err) throw err
-      // console.log(user)
-      res.json(user)
-  })
+
+
+    console.log(req.params.userID)
+  console.log("kuy")
+
+  if(req.params.userID == null) {
+      console.log("parameter = null or undefined")
+  }else{
+    User.findById(req.params.userID, function(err, user){
+        if(err) throw err
+        // console.log(user)
+        res.json(user)
+    })
+
+  }
+ 
 }

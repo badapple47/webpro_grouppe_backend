@@ -22,5 +22,8 @@ module.exports = function(app){
     app.route('/updateEventView/:eventID')
         .get(eve.updateEventView)
 
+    app.route('/showEventByPage/:pageNum')
+        .get(eve.showEventByPage)
+
 
 }
