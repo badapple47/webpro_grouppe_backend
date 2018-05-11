@@ -26,3 +26,21 @@ exports.showNews = function(req,res){
         res.json(news)
     })
 }
+
+exports.updateNewsView = function(req,res){
+    var tempview,newAdd
+    console.log("updateEventView")
+    News.findById(req.params.newsID, function(err, news){
+        if(err) throw err
+        console.log(news.view)
+        tempview = news.view+1
+        newAdd = {
+            "view" : tempview
+        }
+        News.findByIdAndUpdate(req.params.newsID, newAdd, {new: true}, function(err, eve){
+            if(err) throw err
+        res.json(eve)
+        })
+
+    })
+}

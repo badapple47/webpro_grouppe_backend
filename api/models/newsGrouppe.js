@@ -20,6 +20,9 @@ var UserSchema = new Schema({
     },
     year: {
         type: Number
+    },
+    view:{
+        type: Number
     }
 
 })

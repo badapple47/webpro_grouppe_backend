@@ -8,4 +8,7 @@ module.exports = function(app){
 
     app.route('/showNews/:newsID')
         .get(news.showNews)
+
+    app.route('/updateNewsView/:newsID')
+        .get(news.updateNewsView)
 }

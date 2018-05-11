@@ -19,5 +19,8 @@ module.exports = function(app){
     app.route('/checkEventInMember')
         .post(eve.checkEventInMember)
 
+    app.route('/updateEventView/:eventID')
+        .get(eve.updateEventView)
+
 
 }

@@ -76,6 +76,7 @@ exports.update = function(req, res){
 exports.showUser = function(req, res){
   console.log(req.params.userID)
   // console.log(newUser)
+
   User.findById(req.params.userID, function(err, user){
       if(err) throw err
       // console.log(user)
