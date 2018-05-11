@@ -103,3 +103,17 @@ exports.updateEventView = function(req,res){
 
     })
 }
+
+exports.showEventByPage= function(req,res){
+    var temp = []
+    var i
+    console.log(req.params.pageNum)
+    Eve.find({}, function(err, user){
+        if(err) throw err
+        for(i = (req.params.pageNum-1)*7; i< req.params.pageNum*7; i++){
+                temp.push(user[i])
+        }
+        console.log(user)
+        res.json(temp)
+    })
+}
