@@ -16,13 +16,16 @@ var UserSchema = new Schema({
         type: Number
     },
     month: {
-        type : Number
+        type : String
     },
     year: {
         type: Number
     },
     view:{
         type: Number
+    },
+    location:{
+        type : String
     }
 
 })
