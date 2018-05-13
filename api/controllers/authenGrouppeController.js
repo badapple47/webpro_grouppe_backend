@@ -52,13 +52,23 @@ exports.check2 = function(req, res){
 
 exports.createAUser = function(req, res){
     // console.log(req.body)
-    User.insertMany(req.body, function(err, res) {
-      if (err) throw err
-      console.log("Insert complete!!")
-      
-    })
-    res.json("insert complete!!")
-}
+    let query = { username: req.body.username }
+    console.log(query)
+    User.findOne(query, (err ,user) => {
+        if(err) throw err
+        console.log(user)
+        if(user != null){
+        res.json("can not insert duplicate user")
+    }else{
+        User.insertMany(req.body, function(err, res) {
+            if (err) throw err
+            console.log("Insert complete!!")
+            res.json("insert complete!!")
+          })
+    }
+    
+    
+})}
 
 
 exports.update = function(req, res){

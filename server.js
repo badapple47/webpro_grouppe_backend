@@ -3,7 +3,7 @@ const mongoose      = require('mongoose')
 const bodyParser    = require('body-parser')
 
 app = express()
-port = process.env.PORT || 8082
+port = 8082
 
 const User = require('./api/models/userListModel')
 // const auth = require('./api/models/authModel')
@@ -34,5 +34,5 @@ authGrouppeRoutes(app)
 eventGrouppeRoutes(app)
 newsGrouppeRoutes(app)
 
-app.listen(port)
+app.listen(port, process.env.IP)
 console.log('Server started on: ' + port);

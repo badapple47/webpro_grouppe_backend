@@ -106,14 +106,27 @@ exports.updateEventView = function(req,res){
 
 exports.showEventByPage= function(req,res){
     var temp = []
-    var i
+    var i,ii
+    
     console.log(req.params.pageNum)
     Eve.find({}, function(err, user){
         if(err) throw err
+        if(user.length%7!=0){
+            ii = (user.length-user.length%7)/7+1
+        }else{
+            ii = user.length/7
+        }
         for(i = (req.params.pageNum-1)*7; i< req.params.pageNum*7; i++){
+            if(user[i]!=null)
                 temp.push(user[i])
         }
-        console.log(user)
-        res.json(temp)
+        var send = {
+            "eventArray" : temp,
+            "buttonCount" : ii
+        }
+        console.log("!!!!!this is user.length : "+ user.length)
+        console.log("!!!!!this is user.length/7 : "+ user.length/7)
+        console.log("!!!!!!!!!!!!!!!!this is send : "+send)
+        res.json(send)
     })
 }
